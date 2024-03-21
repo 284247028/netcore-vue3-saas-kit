@@ -15,39 +15,39 @@ namespace NetcoreSaas.WebApi.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityByDefaultColumns()
-                .HasAnnotation("Relational:MaxIdentifierLength", 63)
+                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
+                .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.0");
 
             modelBuilder.Entity("NetcoreSaas.Domain.Models.App.Contracts.Contract", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid>("CreatedByUserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Description")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("File")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<Guid>("LinkId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("Status")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -62,22 +62,22 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("ContractId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid>("CreatedByUserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("Type")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -92,19 +92,19 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid?>("ContractId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid>("EmployeeId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
@@ -119,22 +119,22 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("ContractId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("Role")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
@@ -149,34 +149,34 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid?>("CreatedByUserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid?>("ModifiedByUserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("TenantId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("WorkspaceId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
@@ -195,28 +195,28 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<DateTime>("Date")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("KeyValues")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("NewValues")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("OldValues")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Table")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
 
@@ -227,28 +227,28 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("ClientWorkspaceId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid>("CreatedByUserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("CreatedByWorkspaceId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid>("ProviderWorkspaceId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<int>("Status")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -267,37 +267,37 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid>("CreatedByUserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("CreatedByWorkspaceId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid?>("CreatedLinkId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<bool>("InviteeIsProvider")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Message")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("Status")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<string>("WorkspaceName")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
 
@@ -315,31 +315,31 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<bool>("Included")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Key")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("Order")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<Guid>("SubscriptionProductId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<bool>("TranslateInFrontend")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Value")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
 
@@ -352,40 +352,40 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<bool>("Active")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<int>("BillingPeriod")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Currency")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("numeric");
+                        .HasColumnType("decimal(65,30)");
 
                     b.Property<decimal?>("PriceBefore")
-                        .HasColumnType("numeric");
+                        .HasColumnType("decimal(65,30)");
 
                     b.Property<string>("ServiceId")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<Guid>("SubscriptionProductId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<int>("TrialDays")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("Type")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -398,49 +398,49 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<bool>("Active")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Badge")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<bool>("ContactUs")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Description")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("MaxLinks")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("MaxStorage")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("MaxUsers")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("MaxWorkspaces")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("MonthlyContracts")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<string>("ServiceId")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("Tier")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.HasKey("Id");
 
@@ -451,37 +451,37 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Domain")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Icon")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Logo")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("LogoDarkmode")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Subdomain")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("SubscriptionCustomerId")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<Guid>("Uuid")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
@@ -490,7 +490,7 @@ namespace NetcoreSaas.WebApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b810ec42-c688-4e16-864d-f1b09806d1a1"),
+                            Id = new Guid("3f6db738-2a47-4cfd-8576-34af7bd0c30a"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Admin",
                             Subdomain = "admin",
@@ -502,28 +502,28 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid>("Link")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<bool>("LinkActive")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<bool>("PublicUrl")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<bool>("RequireAcceptance")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<Guid>("TenantId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
@@ -537,49 +537,49 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<bool>("Active")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime?>("CancelledAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<DateTime?>("EndDate")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("MaxLinks")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("MaxStorage")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("MaxUsers")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("MaxWorkspaces")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("MonthlyContracts")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("StartDate")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid>("SubscriptionPriceId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("SubscriptionServiceId")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<Guid>("TenantId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
@@ -594,37 +594,37 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("ChatbotCustomerId")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<bool>("EmailNotifications")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<Guid?>("InvitationLink")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<int>("Joined")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("Role")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("Status")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<Guid>("TenantId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
@@ -637,14 +637,14 @@ namespace NetcoreSaas.WebApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("6d30efef-8d62-4aa1-8598-1c3047d7273a"),
+                            Id = new Guid("999894d7-412b-4e4a-bcae-4d59bbd9ad6f"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             EmailNotifications = true,
                             Joined = 0,
                             Role = 0,
                             Status = 2,
-                            TenantId = new Guid("b810ec42-c688-4e16-864d-f1b09806d1a1"),
-                            UserId = new Guid("3079388a-481a-4ef0-8d77-a383fa848ef4")
+                            TenantId = new Guid("3f6db738-2a47-4cfd-8576-34af7bd0c30a"),
+                            UserId = new Guid("5dfffe8c-3f67-4ffc-9b54-fbf5e0247382")
                         });
                 });
 
@@ -652,49 +652,50 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Avatar")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid?>("DefaultTenantId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<char>("Gender")
-                        .HasColumnType("character(1)");
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("varchar(1) CHARACTER SET utf8mb4");
 
                     b.Property<string>("LastName")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Locale")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<int>("LoginType")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Password")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("Phone")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<Guid>("Token")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<int>("Type")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -705,15 +706,15 @@ namespace NetcoreSaas.WebApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3079388a-481a-4ef0-8d77-a383fa848ef4"),
+                            Id = new Guid("5dfffe8c-3f67-4ffc-9b54-fbf5e0247382"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "admin@saascourses.net",
+                            Email = "DEVELOPMENT_ADMIN_EMAIL",
                             FirstName = "Admin",
-                            Gender = 'M',
+                            Gender = "M",
                             LastName = "User",
                             LoginType = 0,
-                            Password = "AfwDXicb6hl3vfvur4d/br5mdr50YGcpfrWXOvL0T9/kswE1EUXAd0AoF9YDCf7+wQ==",
-                            Token = new Guid("f8334685-0a3f-4df1-b6f5-15f133b65ffe"),
+                            Password = "AVgYX8iuxa+kVg8zJ1eNC0yu8hI6Kf8MUY6RVQajSvCPV6XXSvr7z0xroWBx6L/2Dg==",
+                            Token = new Guid("fc5a0877-2888-4723-a60a-361a7a02d038"),
                             Type = 0
                         });
                 });
@@ -722,40 +723,40 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("BusinessMainActivity")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid?>("CreatedByUserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<bool>("Default")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<Guid?>("ModifiedByUserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<DateTime?>("RegistrationDate")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("RegistrationNumber")
-                        .HasColumnType("text");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<Guid>("TenantId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<int>("Type")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -770,11 +771,11 @@ namespace NetcoreSaas.WebApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("64f4764f-d065-4ec7-a9d3-67d08f8286ac"),
+                            Id = new Guid("5418bcc9-2d34-47d6-9b64-c9f48a3cd9e5"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Default = false,
                             Name = "Default Workspace",
-                            TenantId = new Guid("b810ec42-c688-4e16-864d-f1b09806d1a1"),
+                            TenantId = new Guid("3f6db738-2a47-4cfd-8576-34af7bd0c30a"),
                             Type = 0
                         });
                 });
@@ -783,25 +784,25 @@ namespace NetcoreSaas.WebApi.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<bool>("Default")
-                        .HasColumnType("boolean");
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<DateTime?>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("Role")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.Property<Guid>("WorkspaceId")
-                        .HasColumnType("uuid");
+                        .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
@@ -814,12 +815,12 @@ namespace NetcoreSaas.WebApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3878607d-34e8-4a24-a0be-9ff1a0aa6845"),
+                            Id = new Guid("e10a59cf-d03d-4756-874d-22946c22d12c"),
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Default = false,
                             Role = 0,
-                            UserId = new Guid("3079388a-481a-4ef0-8d77-a383fa848ef4"),
-                            WorkspaceId = new Guid("64f4764f-d065-4ec7-a9d3-67d08f8286ac")
+                            UserId = new Guid("5dfffe8c-3f67-4ffc-9b54-fbf5e0247382"),
+                            WorkspaceId = new Guid("5418bcc9-2d34-47d6-9b64-c9f48a3cd9e5")
                         });
                 });
 
