@@ -154,12 +154,12 @@ namespace NetcoreSaas.WebApi
             //{
             //    routes.MapHub<DevicesHub>("/device");
             //});
-            
-            // //Client App
+
+            //Client App
             app.UseSpa(spa =>
             {
                 spa.Options.SourcePath = "ClientApp";
-                
+
                 if (env.IsDevelopment())
                 {
                     spa.UseProxyToSpaDevelopmentServer("http://localhost:3000");
